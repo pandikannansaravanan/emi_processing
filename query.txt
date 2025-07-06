@@ -1,0 +1,14 @@
+composer create-project laravel/laravel emi_processing_project
+php artisan migrate:fresh
+
+php artisan make:migration create_loan_details_table
+php artisan migrate --path=/database/migrations/2025_07_05_170158_create_loan_details_table.php
+
+php artisan make:seeder LoanDetailsSeeder
+php artisan db:seed --class=LoanDetailsSeeder
+
+php artisan make:seeder UserSeeder
+php artisan db:seed --class=UserSeeder
+
+php artisan make:model LoanDetails
+php artisan make:model EmiDetails
