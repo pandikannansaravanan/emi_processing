@@ -46,7 +46,7 @@
 
                 // Send AJAX request to process EMI
                 $.ajax({
-                    url: '/process-emi',
+                    url: '{{url("/process-emi")}}',
                     type: 'POST',
                     data: {
                         _token: '{{ csrf_token() }}'
